@@ -23,8 +23,9 @@ tasks:
 #------------------------------------------------
 
 
-  go.init:
+  go.init:    
     cmds:
+      - git config http.sslVerify false
       - go mod init demo.micro.code
     
   #/# GIT
