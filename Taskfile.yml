@@ -1,0 +1,38 @@
+# https://taskfile.dev
+
+version: "3"
+
+#includes:
+#  cadvisor:
+#    dir: ./cadvisor
+#    taskfile: ./cadvisor/Taskfile.yml
+ 
+vars:
+  G_SLEEP: 10
+  G_SLEEP_MAX: 30
+ 
+tasks:
+  default:
+    silent: false
+
+ 
+#------------------------------------------------
+# > UTIL
+# > UTIL
+# > UTIL
+#------------------------------------------------
+
+
+  go.init:
+    cmds:
+      - go mod init demo.micro.code
+    
+  #/# GIT
+  #/# GIT
+  #/# GIT
+  git.all:
+    cmds:
+      - cmd: git push origin $(git rev-parse --abbrev-ref HEAD)
+        ignore_error: true      
+      - cmd: git push gitea $(git rev-parse --abbrev-ref HEAD)
+        
